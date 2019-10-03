@@ -18,11 +18,11 @@ select * from Products;
 INSERT INTO Products(product_name,department_name,price,stock_quantity)
 VALUES ("Shenmue III - PS4","VIDEO GAMES",49.95,150),
     ("Doom Eternal - PS4","VIDEO GAMES",59.99,200),
-    ("Cheese Balls Barrel","GROCERY",14.97,50),
+    ("Cheese Balls Barrel","GROCERY",14.97,99),
     ("Tactical Gloves","CLOTHING",23.99,40),
-    ("Chewbacca Mask","CLOTHING",63.23,35),
+    ("Chewbacca Mask","CLOTHING",63.23,20),
     ("Bear Grylls Survival Hatchet","SPORTS & OUTDOORS",38.39,5),
-    ("Blade Runner 2049","MOVIES & TV",9.99,55),
+    ("Blade Runner 2049","MOVIES & TV",9.99,49),
     ("Ferris Beuller's Day Off","MOVIES & TV",19.99,25),
     ("Ring of Namira","DAEDRIC ARTIFACT",9999.99,1),
-    ("He-Man Action Figure","TOYS & GAMES",26.50,23);
+    ("He-Man Action Figure","TOYS & GAMES",26.50,30);

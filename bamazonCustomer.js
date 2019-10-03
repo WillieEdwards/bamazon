@@ -30,7 +30,7 @@ function displayProducts() {
             {
                 type: "input",
                 name: "id",
-                message: "Please enter the ID of the item you would like to purchase",
+                message: "Enter the ID of the item you would like to purchase:",
                 validate: function (value) {
                     if (isNaN(value) == false && parseInt(value) <= res.length && parseInt(value) > 0) {
                         return true;
@@ -42,7 +42,7 @@ function displayProducts() {
             {
                 type: "input",
                 name: "qty",
-                message: "How much would you like to purchase?",
+                message: "Please enter the amount you would like to purchase:",
                 validate: function (value) {
                     if (isNaN(value)) {
                         return false;
@@ -64,7 +64,7 @@ function displayProducts() {
                     { item_id: ans.id }
                 ], function (err, result) {
                     if (err) throw err;
-                    console.log("Success! Your total is $" + grandTotal.toFixed(2) + ". Your item(s) will be shipped to you in 3-5 business days.");
+                    console.log("Success! Your total is $" + grandTotal.toFixed(2) + ". Your item(s) will be shipped to you in 3-6 weeks.");
                 });
 
                 connection.query("SELECT * FROM Departments", function (err, deptRes) {
@@ -87,7 +87,7 @@ function displayProducts() {
                 });
 
             } else {
-                console.log("Sorry, there's not enough in stock!");
+                console.log("The requested quantity is not in stock.");
             }
 
             additionalItem();
@@ -107,7 +107,7 @@ function additionalItem() {
         if (ans.reply) {
             displayProducts();
         } else {
-            console.log("See you soon!");
+            console.log("Thank you! Come again!");
         }
     });
 }
