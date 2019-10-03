@@ -5,7 +5,7 @@ CREATE DATABASE bamazon_db;
 USE bamazon_db;
 
 CREATE TABLE Products(
-    item_id MEDIUMINT AUTO_INCREMENT NOT NULL,
+    item_id INT NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(100) NOT NULL,
     department_name VARCHAR(50) NOT NULL,
     price DECIMAL(10,2) NOT NULL,
@@ -13,9 +13,9 @@ CREATE TABLE Products(
     primary key(item_id)
 );
 
-select * from Products;
+select * from products;
 
-INSERT INTO Products(product_name,department_name,price,stock_quantity)
+INSERT INTO products(product_name,department_name,price,stock_quantity)
 VALUES ("Shenmue III - PS4","VIDEO GAMES",49.95,150),
     ("Doom Eternal - PS4","VIDEO GAMES",59.99,200),
     ("Cheese Balls Barrel","GROCERY",14.97,99),

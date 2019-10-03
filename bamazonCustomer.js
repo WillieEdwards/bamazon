@@ -2,6 +2,7 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
 var Table = require("cli-table");
+
 //create connection to db
 var connection = mysql.createConnection({
     host: "localhost",
@@ -58,39 +59,19 @@ function displayProducts() {
 
             //check if quantity is sufficient
             if (res[itemChoice].stock_quantity >= itemQuantity) {
-                //after purchase, updates quantity in Products
+                //after purchase, updates quantity in products
                 connection.query("UPDATE Products SET ? WHERE ?", [
                     { stock_quantity: (res[itemChoice].stock_quantity - itemQuantity) },
                     { item_id: ans.id }
                 ], function (err, result) {
                     if (err) throw err;
                     console.log("Success! Your total is $" + grandTotal.toFixed(2) + ". Your item(s) will be shipped to you in 3-6 weeks.");
-                });
-
-                connection.query("SELECT * FROM Departments", function (err, deptRes) {
-                    if (err) throw err;
-                    var index;
-                    for (var i = 0; i < deptRes.length; i++) {
-                        if (deptRes[i].department_name === res[itemChoice].department_name) {
-                            index = i;
-                        }
-                    }
-
-                    //updates totalSales in departments table
-                    connection.query("UPDATE Departments SET ? WHERE ?", [
-                        { TotalSales: deptRes[index].TotalSales + grandTotal },
-                        { department_name: res[itemChoice].department_name }
-                    ], function (err, deptRes) {
-                        if (err) throw err;
-                        //console.log("Updated Dept Sales.");
-                    });
-                });
-
+                    additionalItem();
+                })
             } else {
                 console.log("The requested quantity is not in stock.");
+                additionalItem();
             }
-
-            additionalItem();
         })
     })
 }
@@ -107,7 +88,7 @@ function additionalItem() {
         if (ans.reply) {
             displayProducts();
         } else {
-            console.log("Thank you! Come again!");
+            console.log("Do come back...");
         }
     });
 }
