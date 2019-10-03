@@ -19,7 +19,7 @@ function displayProducts() {
 
         var displayTable = new Table({
             head: ["Item ID", "Product Name", "Category", "Price", "Quantity"],
-            colWidths: [10, 25, 25, 10, 14]
+            colWidths: [10, 35, 25, 10, 14]
         });
         for (var i = 0; i < res.length; i++) {
             displayTable.push(

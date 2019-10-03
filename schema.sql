@@ -18,7 +18,7 @@ select * from products;
 INSERT INTO products(product_name,department_name,price,stock_quantity)
 VALUES ("Shenmue III - PS4","VIDEO GAMES",49.95,150),
     ("Doom Eternal - PS4","VIDEO GAMES",59.99,200),
-    ("Cheese Balls Barrel","GROCERY",14.97,99),
+    ("Trash Bags - 33 Gallon, 48 Count","GROCERY",12.14,99),
     ("Tactical Gloves","CLOTHING",23.99,40),
     ("Chewbacca Mask","CLOTHING",63.23,20),
     ("Bear Grylls Survival Hatchet","SPORTS & OUTDOORS",38.39,5),
