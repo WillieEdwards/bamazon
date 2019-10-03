@@ -46,6 +46,8 @@
 
     * A message informing the customer that there isn't a sufficient quantity in stock, and a prompt asking if they would like to continue shopping.
 
-1. Ctrl + C to exit out of the shop.
+1. Input **Ctrl + C** to exit out of the store.
 
 ## Demo
+
+![Bamazon Customer Demo](/images/bamazon-customer.gif)

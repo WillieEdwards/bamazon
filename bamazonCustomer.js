@@ -88,7 +88,7 @@ function additionalItem() {
         if (ans.reply) {
             displayProducts();
         } else {
-            console.log("Do come back...");
+            console.log("Thanks for shopping with us!");
         }
     });
 }
