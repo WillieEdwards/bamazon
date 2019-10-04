@@ -1,4 +1,4 @@
-# BAMAZON (an Amazon Like Storefront)
+# BAMAZON (an Amazon-like Storefront)
 
 # Overview
 
